@@ -1,0 +1,75 @@
+{
+  "name": "fern",
+  "displayName": "Fern Theme",
+  "description": "Fern Theme",
+  "version": "0.0.1",
+  "author": "EliWimmer (https://github.com/EliWimmer)",
+  "contributors": [],
+  "publisher": "EliWimmer",
+  "engines": {
+    "vscode": "^1.67.2"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#363C38",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/EliWimmer/vscode-theme-fern",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliWimmer/vscode-theme-fern.git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Fern Dark Medium",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fern-dark-medium.json"
+      },
+      {
+        "label": "Fern Dark Hard",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fern-dark-hard.json"
+      },
+      {
+        "label": "Fern Dark Soft",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fern-dark-soft.json"
+      },
+      {
+        "label": "Fern Light Medium",
+        "uiTheme": "vs",
+        "path": "./themes/fern-light-medium.json"
+      },
+      {
+        "label": "Fern Light Hard",
+        "uiTheme": "vs",
+        "path": "./themes/fern-light-hard.json"
+      },
+      {
+        "label": "Fern Light Soft",
+        "uiTheme": "vs",
+        "path": "./themes/fern-light-soft.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "ovsx": "^0.8.3",
+    "semantic-release": "^22.0.5",
+    "vsce": "^2.9.0"
+  },
+  "private": true,
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "license": "MIT",
+  "main": "release.config.js",
+  "bugs": {
+    "url": "https://github.com/EliWimmer/vscode-theme-fern/issues"
+  }
+}
