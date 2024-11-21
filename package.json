@@ -63,7 +63,6 @@
     "semantic-release": "^22.0.5",
     "vsce": "^2.9.0"
   },
-  
   "private": true,
   "scripts": {
     "semantic-release": "semantic-release"
