@@ -1067,7 +1067,7 @@
     "menu.border": "#363C38",
     "menu.separatorBackground": "#363C38",
     // JUPYTER NOTEBOOKS
-    "notebook.cellEditorBackground": "#282828",
+    "notebook.cellEditorBackground": "#292B2A",
     "notebook.focusedCellBorder": "#8E9E92",
     "notebook.cellBorderColor": "#58625C",
     "notebook.focusedEditorBorder": "#58625C",

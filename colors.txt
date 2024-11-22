@@ -1,8 +1,8 @@
 // from https://github.com/morhetz/Fern
 
 ## dark
-bg0-h 1D211E
-bg0 272D29
+bg0-h 1E201F
+bg0 292B2A
 bg0-s 2F3230
 bg1 363C38
 bg2 464F49
@@ -39,7 +39,7 @@ bg2 B1C5B8
 bg3 9FB1A5
 bg4 8E9E92
 gray 7C837E
-fg0 282828
+fg0 292B2A
 fg1 363C38
 fg2 504945
 fg3 58625C

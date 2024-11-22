@@ -13,7 +13,7 @@ mySearch = function(source: string, subString: string) {
   }
 }
 
-class Greeter {
+class Greeter {j
     greeting: string;
     constructor(message: string) {
         this.greeting = message;

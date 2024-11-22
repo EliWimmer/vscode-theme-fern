@@ -4,7 +4,7 @@
   "description": "Fern Theme",
   "version": "0.0.1",
   "author": "EliWimmer (https://github.com/EliWimmer)",
-  "contributors": [],
+  "contributors": [ ],
   "publisher": "EliWimmer",
   "engines": {
     "vscode": "^1.67.2"
@@ -19,40 +19,14 @@
   },
   "homepage": "https://github.com/EliWimmer/vscode-theme-fern",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EliWimmer/vscode-theme-fern.git"
+    "url": "https://github.com/EliWimmer/vscode-theme-fern"
   },
   "contributes": {
     "themes": [
       {
-        "label": "Fern Dark Medium",
+        "label": "Fern Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/fern-dark-medium.json"
-      },
-      {
-        "label": "Fern Dark Hard",
-        "uiTheme": "vs-dark",
-        "path": "./themes/fern-dark-hard.json"
-      },
-      {
-        "label": "Fern Dark Soft",
-        "uiTheme": "vs-dark",
-        "path": "./themes/fern-dark-soft.json"
-      },
-      {
-        "label": "Fern Light Medium",
-        "uiTheme": "vs",
-        "path": "./themes/fern-light-medium.json"
-      },
-      {
-        "label": "Fern Light Hard",
-        "uiTheme": "vs",
-        "path": "./themes/fern-light-hard.json"
-      },
-      {
-        "label": "Fern Light Soft",
-        "uiTheme": "vs",
-        "path": "./themes/fern-light-soft.json"
       }
     ]
   },
