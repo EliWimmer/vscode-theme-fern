@@ -787,6 +787,12 @@
         "foreground": "#C7E1CF"
       }
     },
+    {
+      "scope": "entity.name.function.ts",
+      "settings": {
+        "foreground": "#94A857"
+      }
+    },
     // JSDoc --------------------------------------------
     {
       "scope": "storage.type.class.jsdoc",
