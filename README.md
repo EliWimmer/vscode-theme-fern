@@ -21,7 +21,7 @@ ext install eliwimmer.fern
 ```
 ### Screenshot
 
-!(images/image1.jpg)
+<img src="https://raw.githubusercontent.com/EliWimmer/vscode-theme-fern/master/images/image1.png">
 
 ## Contributing
 
