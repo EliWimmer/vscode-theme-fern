@@ -8,30 +8,17 @@
   <br>
 </h1>
 
-<h4 align="center">A port of Fern theme to VS Code editor</h4>
+<h4 align="center">Gruvbox meets a temperate forest</h4>
 
 ## About
 
-
+A gruvbox-inspired dark theme for VS Code with lush greens and pastel colors.
 
 ## Installation
 
 ```
 ext install eliwimmer.fern
 ```
-
-## Variants
-
-- Dark - Medium Contrast
-
-<div style="opacity: 0.5;">
-<li>Dark - Hard Contrast</li>
-<li>Dark - Soft Contrast</li>
-<li>Light - Medium Contrast</li>
-<li>Light - Hard Contrast</li>
-<li>Light - Soft Contrast</li>
-</div>
-
 ### Screenshot
 
 ![screenshots](images/image1.jpg)
