@@ -42,7 +42,6 @@
     "semantic-release": "semantic-release"
   },
   "license": "MIT",
-  "main": "release.config.js",
   "bugs": {
     "url": "https://github.com/EliWimmer/vscode-theme-fern/issues"
   }

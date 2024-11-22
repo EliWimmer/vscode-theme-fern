@@ -21,7 +21,7 @@ ext install eliwimmer.fern
 ```
 ### Screenshot
 
-![screenshots](images/image1.jpg)
+!(images/image1.jpg)
 
 ## Contributing
 
