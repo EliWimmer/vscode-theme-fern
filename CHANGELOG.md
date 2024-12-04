@@ -1,5 +1,7 @@
-### 2024-12-04 - 0.0.5
+
+### 2024-12-04 - 0.0.6
 - Updated README
+- Updated file icons
 
 ### 2024-12-04 - 0.0.4
 - Updated some colors
