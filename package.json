@@ -2,9 +2,9 @@
   "name": "fern",
   "displayName": "Fern Theme",
   "description": "Fern Theme",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "author": "EliWimmer (https://github.com/EliWimmer)",
-  "contributors": [ ],
+  "contributors": [],
   "publisher": "EliWimmer",
   "engines": {
     "vscode": "^1.67.2"
@@ -28,6 +28,13 @@
         "uiTheme": "vs-dark",
         "path": "./themes/fern-dark-medium.json"
       }
+    ],
+    "iconThemes": [
+      {
+        "id": "fern-icons",
+        "label": "Fern Icons",
+        "path": "./themes/file-icons.json"
+      }
     ]
   },
   "devDependencies": {
@@ -35,14 +42,18 @@
     "@semantic-release/git": "^10.0.1",
     "ovsx": "^0.8.3",
     "semantic-release": "^22.0.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "vsce": "^2.9.0"
   },
   "private": true,
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "build:icons": "npx tsx scripts/build-icons.ts"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/EliWimmer/vscode-theme-fern/issues"
-  }
+  },
+  "type": "module"
 }

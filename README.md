@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center" style="color: #4C9E75">
   <br>
   <a href="https://marketplace.visualstudio.com/items?itemName=eliwimmer.fern">
     <img src="https://raw.githubusercontent.com/EliWimmer/vscode-theme-fern/master/images/icon.png">
@@ -10,9 +10,12 @@
 
 <h4 align="center">Gruvbox meets a temperate forest</h4>
 
-## About
+<h2 style="color: #C7E1CF">About</h2>
 
-A gruvbox-inspired dark theme for VS Code with lush greens and pastel colors.
+A gruvbox-inspired dark theme for VS Code with lush greens and desaturated colors.
+#### Includes:
+- Dark color theme
+- File icon theme
 
 ## Installation
 
@@ -35,8 +38,9 @@ See [changelog](CHANGELOG.md).
 
 ## Credits
 
-Thanks to [Pavel Pertsev](https://github.com/morhetz), the creator of [Gruvbox](https://github.com/morhetz/Gruvbox) original theme.
-
-Thanks for help to make the Fern theme better.
+Thanks to:
+  - [jdinhlife](https://github.com/jdinhlife) for the [vscode-theme-gruvbox](https://github.com/jdinhify/vscode-theme-gruvbox) which was the basis for this theme
+  - [Pavel Pertsev](https://github.com/morhetz), the creator of [Gruvbox](https://github.com/morhetz/Gruvbox) original theme, 
+  - [Catppuccin](https://github.com/catppuccin/vscode) for the file icons
 
 Copyright (C) 2024 [Eli Wimmer](https://github.com/eliwimmer)

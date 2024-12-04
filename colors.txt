@@ -2,7 +2,7 @@
 
 ## dark
 bg0-h 1E201F
-bg0 292B2A
+bg0 242827
 bg0-s 2F3230
 bg1 363C38
 bg2 464F49
@@ -23,12 +23,12 @@ yellow1 B6A616
 yellow2 E4C445
 blue1 587489
 blue2 83A3A5
-purple1 BC6275
-purple2 D68386
+purple1 A76C8A
+purple2 CD89A0
 aqua1 4C9E75
 aqua2 6EB987
-orange1 D68D0E
-orange2 EAAA1F
+orange1 D67C0E
+orange2 EA961F
 
 ## light
 bg0-h f9f5d7
@@ -39,7 +39,7 @@ bg2 B1C5B8
 bg3 9FB1A5
 bg4 8E9E92
 gray 7C837E
-fg0 292B2A
+fg0 242827
 fg1 363C38
 fg2 504945
 fg3 58625C
@@ -52,9 +52,9 @@ yellow1 B6A616
 yellow2 b57614
 blue1 587489
 blue2 076678
-purple1 BC6275
+purple1 A76C8A
 purple2 8f3f71
 aqua1 4C9E75
 aqua2 427b58
-orange1 D68D0E
+orange1 D67C0E
 orange2 af3a03

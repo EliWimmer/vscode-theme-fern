@@ -344,3 +344,19 @@ label a.owner:not(:hover) {
     margin-bottom: 1em;
     margin-right: 1em;
 }
+
+.visualize-colors {
+  --fg: #cad3f5;
+  --color-2: #f5a97f;
+  --color-8: #E4C445;
+  --color-3: #CC461D;
+  --color-13: #FB7034;
+  --color-4: #587489;
+  --color-5: #83A3A5;
+  --color-10: #A76C8A;
+  --color-6: #CD89A0;
+  --color-7: #4C9E75;
+  --color-12: #6EB987;
+  --color-9: #7B8F38;
+  --color-11: #94A857;
+}

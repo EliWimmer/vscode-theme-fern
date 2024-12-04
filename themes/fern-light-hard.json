@@ -72,7 +72,7 @@
     {
       "scope": "invalid.deprecated",
       "settings": {
-        "foreground": "#BC6275"
+        "foreground": "#A76C8A"
       }
     },
     {
@@ -600,7 +600,7 @@
     {
       "scope": "markup.deleted",
       "settings": {
-        "foreground": "#D68D0E"
+        "foreground": "#D67C0E"
       }
     },
     {
@@ -714,7 +714,7 @@
         "constant.rgb-value.scss"
       ],
       "settings": {
-        "foreground": "#D68D0E"
+        "foreground": "#D67C0E"
       }
     },
     {
@@ -904,7 +904,7 @@
     "list.hoverForeground": "#504945",
     "list.focusBackground": "#C7E1CF",
     "list.focusForeground": "#363C38",
-    "list.inactiveSelectionForeground": "#D68D0E",
+    "list.inactiveSelectionForeground": "#D67C0E",
     "list.inactiveSelectionBackground": "#C7E1CF80",
     "list.dropBackground": "#C7E1CF",
     "list.highlightForeground": "#4C9E75",
@@ -932,7 +932,7 @@
     // TABS
     "tab.border": "#f9f5d700",
     "tab.activeBackground": "#f2e5bc",
-    "tab.activeBorder": "#D68D0E",
+    "tab.activeBorder": "#D67C0E",
     "tab.activeForeground": "#363C38",
     "tab.inactiveForeground": "#7c6f64",
     "tab.inactiveBackground": "#f9f5d7",
@@ -980,12 +980,12 @@
     "editorWarning.foreground": "#B6A616",
     "editorInfo.foreground": "#587489",
     // EDITOR - BRACKET PAIR COLORIZATION
-    "editorBracketHighlight.foreground1": "#BC6275",
+    "editorBracketHighlight.foreground1": "#A76C8A",
     "editorBracketHighlight.foreground2": "#587489",
     "editorBracketHighlight.foreground3": "#4C9E75",
     "editorBracketHighlight.foreground4": "#7B8F38",
     "editorBracketHighlight.foreground5": "#B6A616",
-    "editorBracketHighlight.foreground6": "#D68D0E",
+    "editorBracketHighlight.foreground6": "#D67C0E",
     "editorBracketHighlight.unexpectedBracket.foreground": "#CC461D",
     // DIFF EDITOR
     "diffEditor.insertedTextBackground": "#79740e30",
@@ -1044,7 +1044,7 @@
     "terminal.ansiBrightYellow": "#b57614",
     "terminal.ansiBlue": "#587489",
     "terminal.ansiBrightBlue": "#076678",
-    "terminal.ansiMagenta": "#BC6275",
+    "terminal.ansiMagenta": "#A76C8A",
     "terminal.ansiBrightMagenta": "#8f3f71",
     "terminal.ansiCyan": "#4C9E75",
     "terminal.ansiBrightCyan": "#427b58",
@@ -1061,7 +1061,7 @@
     "gitDecoration.deletedResourceForeground": "#CC461D",
     "gitDecoration.untrackedResourceForeground": "#7B8F38",
     "gitDecoration.ignoredResourceForeground": "#8E9E92",
-    "gitDecoration.conflictingResourceForeground": "#BC6275",
+    "gitDecoration.conflictingResourceForeground": "#A76C8A",
     // MENU BAR
     "menu.border": "#C7E1CF",
     "menu.separatorBackground": "#C7E1CF",
