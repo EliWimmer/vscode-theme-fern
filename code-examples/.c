@@ -1,80 +1,37 @@
-/* Common */
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <time.h>
-#include <errno.h>
-#include <sys/mman.h>
+#include <stdlib.h>
 
-/* System */
-#include <unistd.h>
-#include <signal.h>
+#define MAX_SIZE 100
+#define SQUARE(x) ((x) * (x))
 
-/* Net */
-#include <netdb.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+typedef struct {
+    int id;
+    float value;
+    char* name;
+} DataPoint;
 
-/* Default port if none is specified */
-#define DEFAULT_PORT_ECP 58057
-#define DEFAULT_PORT_TES 59000
+// This function will cause a warning due to signed/unsigned comparison
+int find_element(int arr[], int size) {
+    for (size_t i = 0; i < size; i++) {
+        if (arr[i] == 42) return i;
+    }
+    return -1;
+}
 
+int main(void) {
+    const double PI = 3.14159;
+    int numbers[] = {1, 2, 3};
+    DataPoint* data = malloc(sizeof(DataPoint));
 
-/*
- * This program creates a udp server on a given port an waits for incoming requests
- * It offers a shell so you can kill the created server
- */
-int main(int argc, char** argv)
-{
-	int port, socket_fd, server_pid;
-	char cmd[10];
-	char **parsed_cmd;
+    // This will cause an error - dereferencing null pointer
+    data = NULL;
+    data->value = 42.0;
 
-	if(argc == 1)
-		port = DEFAULT_PORT_ECP;
-	else if(argc == 3 && ((strcmp(argv[1],"-p")) == 0))
-			port = atoi(argv[2]);
-	else{
-		printf("ERROR: Wrong input format.\ninput: ./ECP [-p ECPport]\n");
-		exit(1);
-	}
-	/* Create a UDP server on port */
-	server_pid = start_udp_server(port, &socket_fd);
-	printf("Server PID: %d\n", server_pid);
+    char str[] = "Hello\nWorld";
 
-	printf("Type \"exit\" to terminate server\n");
-	while(1){
-		printf("> ");
-		if ((fgets(cmd, 50, stdin)) == NULL){
-			perror("[ERROR] no command\n");
-			continue;
-		}
+    for (int i = 0; i < 3; ++i) {
+        printf("%d squared is %d\n", numbers[i], SQUARE(numbers[i]));
+    }
 
-		parsed_cmd = parseString(cmd, "\n");
-
-		if (strcmp(parsed_cmd[0], "exit") == 0){
-			/* To kill the server child process */
-			printf("Closing Server...\n");
-			close(socket_fd);
-			if (kill(server_pid, SIGTERM) == -1){
-				perror("[ERROR] Killing Server Process");
-				free(parsed_cmd);
-				/* Close server socket */
-				exit(-1);
-			}
-			/* Exit */
-			free(parsed_cmd);
-			return 0;
-		}
-		else
-			printf("Wrong command \"%s\".\n", parsed_cmd[0]);
-
-		/* Free memory */
-		free(parsed_cmd);
-	}
-
-	return 0;
+    return 0;
 }

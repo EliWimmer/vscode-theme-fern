@@ -1,24 +1,39 @@
 #!/bin/bash
 
-cd $ROOT_DIR
-DOT_FILES="lastpass weechat ssh Xauthority"
-for dotfile in $DOT_FILES; do conform_link "$DATA_DIR/$dotfile" ".$dotfile"; done
+# Define some colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
 
-case "$PLATFORM" in
-	linux)
-		#conform_link "$CONF_DIR/shell/zshenv" ".zshenv"
-		crontab -l > $ROOT_DIR/tmp/crontab-conflict-arch
-		cd $ROOT_DIR/$CONF_DIR/cron
-		if [[ "$(diff ~/tmp/crontab-conflict-arch crontab-current-arch)" == ""
-			]];
-			then # no difference with current backup
-				logger "$LOG_PREFIX: crontab live settings match stored "\
-					"settings; no restore required"
-				rm ~/tmp/crontab-conflict-arch
-			else # current crontab settings in file do not match live settings
-				crontab $ROOT_DIR/$CONF_DIR/cron/crontab-current-arch
-				logger "$LOG_PREFIX: crontab stored settings conflict with "\
-					"live settings; stored settings restored. "\
-					"Previous settings recorded in ~/tmp/crontab-conflict-arch."
-		fi
-	;;
+# Function with a deliberate error (undefined variable usage)
+function test_error() {
+    echo $undefined_var # This will cause an error
+}
+
+# Warning - comparison using = instead of ==
+if [ "$1" = 2 ]; then
+    echo "Warning: using = for comparison"
+fi
+
+# Array declaration and iteration
+declare -a fruits=("apple" "banana" "orange")
+for fruit in "${fruits[@]}"; do
+    echo -e "${GREEN}Processing $fruit...${NC}"
+done
+
+# Command substitution and arithmetic
+current_time=$(date +%s)
+result=$((current_time % 60))
+
+# Pipe and grep with regex
+ps aux | grep -E "[n]ginx|[a]pache2"
+
+# Here document with variable interpolation
+cat << EOF
+Server Status: RUNNING
+Time: $current_time
+User: $USER
+EOF
+
+# Exit with success
+exit 0

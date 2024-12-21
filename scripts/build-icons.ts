@@ -1,9 +1,30 @@
 import fs from 'fs/promises'
+import path from 'path'
 import { fileIcons } from '../lib/defaults/fileIcons.js'
 import { folderIcons } from '../lib/defaults/folderIcons.js'
 
+async function verifyIconPaths() {
+  const iconDir = path.join(process.cwd(), 'file-icons')
+  const files = await fs.readdir(iconDir)
+
+  // Log all available open folder icons
+  const openFolderIcons = files.filter(f => f.includes('_open'))
+  console.log('Available open folder icons:', openFolderIcons)
+
+  // Verify specific icons exist
+  for (const [name, _] of Object.entries(folderIcons)) {
+    const openIconPath = path.join(iconDir, `folder_${name}_open.svg`)
+    try {
+      await fs.access(openIconPath)
+    } catch {
+      console.warn(`Missing open folder icon: folder_${name}_open.svg`)
+    }
+  }
+}
+
 async function buildIconSet() {
   try {
+    await verifyIconPaths()
     // Base icon definitions
     const iconDefinitions = {
       _file: {
@@ -41,6 +62,7 @@ async function buildIconSet() {
       folder: '_folder',
       folderExpanded: '_folder_open',
       folderNames: {},
+      folderNamesExpanded: {},
       fileExtensions: {},
       fileNames: {},
       languageIds: {},
@@ -72,6 +94,7 @@ async function buildIconSet() {
       if (config.folderNames) {
         for (const folderName of config.folderNames) {
           iconSet.folderNames[folderName] = `folder_${name}`
+          iconSet.folderNamesExpanded[folderName] = `folder_${name}_open`
         }
       }
     }

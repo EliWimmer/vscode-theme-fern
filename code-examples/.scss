@@ -1,0 +1,61 @@
+// Variables
+$primary-color: #3498db;
+$spacing-unit: 16px;
+$border-radius: 4px;
+
+// Mixin with error (undefined variable)
+@mixin button-style {
+  background: $undefined-color;
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+}
+
+// Warning (deprecated property)
+.legacy-box {
+  float: left;
+  -webkit-border-radius: 4px;
+}
+
+// Nested selectors with various tokens
+.container {
+  max-width: 1200px;
+
+  &__header {
+    display: flex;
+    gap: calc($spacing-unit * 2);
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: rgba($primary-color, 0.8);
+    }
+  }
+
+  // Complex selector with pseudo-elements
+  &__card {
+    @include button-style;
+
+    &:hover::after {
+      content: "";
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+
+    // Custom property usage
+    --card-shadow: #{$spacing-unit} #{$spacing-unit} rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
+  }
+
+  // Function usage
+  @function calculate-width($n) {
+    @return $n * $spacing-unit;
+  }
+
+  width: calculate-width(4);
+}
+
+// Media query with interpolation
+@media screen and (min-width: #{calculate-width(60)}) {
+  .container {
+    padding: $spacing-unit * 2;
+  }
+}

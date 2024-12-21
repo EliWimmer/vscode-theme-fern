@@ -1,4 +1,4 @@
-<h1 align="center" style="color: #4C9E75">
+<h1 align="center" style="color: #4F9268">
   <br>
   <a href="https://marketplace.visualstudio.com/items?itemName=eliwimmer.fern">
     <img src="https://raw.githubusercontent.com/EliWimmer/vscode-theme-fern/master/images/icon.png">
@@ -10,7 +10,7 @@
 
 <h4 align="center">Gruvbox meets a temperate forest</h4>
 
-<h2 style="color: #C7E1CF">About</h2>
+<h2 style="color: #D1F0DB">About</h2>
 
 A gruvbox-inspired dark theme for VS Code with lush greens and desaturated colors.
 #### Includes:

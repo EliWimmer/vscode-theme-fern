@@ -4,7 +4,7 @@
   "description": "Fern Theme",
   "version": "0.0.6",
   "author": "EliWimmer (https://github.com/EliWimmer)",
-  "contributors": [],
+  "contributors": [ ],
   "publisher": "EliWimmer",
   "engines": {
     "vscode": "^1.67.2"
@@ -24,9 +24,24 @@
   "contributes": {
     "themes": [
       {
-        "label": "Fern Dark",
+        "label": "Fern Hard Flat",
         "uiTheme": "vs-dark",
-        "path": "./themes/fern-dark-medium.json"
+        "path": "./themes/fern-hard-flat.json"
+      },
+      {
+        "label": "Fern Hard (WIP)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fern-hard.json"
+      },
+      {
+        "label": "Fern Soft Flat",
+        "uiTheme": "vs-dark",
+        "path": "./themes/fern-soft-flat.json"
+      },
+      {
+        "label": "Fern Light Flat",
+        "uiTheme": "vs",
+        "path": "./themes/fern-light-flat.json"
       }
     ],
     "iconThemes": [

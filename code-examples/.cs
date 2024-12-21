@@ -1,48 +1,56 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
-namespace API.Controllers
+namespace SyntaxTest
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class ColorTester<T> where T : class
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly Dictionary<string, int> _cache = new();
+        private const int MAX_ITEMS = 100;
 
-        public ThisShowcase(string name)
+        public event EventHandler<T> OnItemProcessed;
+
+        public async Task<bool> ProcessItem(T item)
         {
-            this.name = name;
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
+
+            var result = await InternalProcess(item);
+
+            #region Warning Generator
+            int unused = 42; // This will generate a warning
+            #endregion
+
+            // This will generate an error - undefined variable
+            Console.WriteLine(undefinedVariable);
+
+            return result > MAX_ITEMS;
         }
-        
-        private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        private async Task<int> InternalProcess(T item)
         {
-            _logger = logger;
-        }
-
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            try
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                var hash = item.GetHashCode();
+                _cache.Add(hash.ToString(), hash);
+                OnItemProcessed?.Invoke(this, item);
+
+                return await Task.FromResult(hash);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error processing item: {ex.Message}");
+                return -1;
+            }
         }
     }
+
+    // Value types with different colors
+    public enum ProcessingStatus
+    {
+        Pending,
+        InProgress,
+        Completed,
+        Failed
+    }
 }
-
-
-
-
