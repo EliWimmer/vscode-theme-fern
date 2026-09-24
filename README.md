@@ -1,46 +1,13 @@
-<h1 align="center" style="color: #4F9268">
-  <br>
-  <a href="https://marketplace.visualstudio.com/items?itemName=eliwimmer.fern">
-    <img src="https://raw.githubusercontent.com/EliWimmer/vscode-theme-fern/master/images/icon.png">
-  </a>
-  <br>
-  Fern
-  <br>
-</h1>
+# Fern
 
-<h4 align="center">Gruvbox meets a temperate forest</h4>
+Fern is a color palette and the ports of that palette.
 
-<h2 style="color: #D1F0DB">About</h2>
+`palette/roles.txt` is the only place a color value is written. A port assigns those roles to an app's slots. `node scripts/build.mjs` fills the hex values in.
 
-A gruvbox-inspired dark theme for VS Code with lush greens and desaturated colors.
-#### Includes:
-- Dark color theme
-- File icon theme
+- `ports/vscode` is the VS Code extension. `workbenches/` holds Fern and Fern Flat. The icon theme stays in this port.
+- `ports/ghostty/fern` is the Ghostty role map.
+- `ports/zed/fern.json` is the Zed role map.
 
-## Installation
+The build writes the VS Code theme files locally and installs the Ghostty and Zed themes into the chezmoi source. Generated theme files are not committed in this repo.
 
-```
-ext install eliwimmer.fern
-```
-### Screenshot
-
-<img src="https://raw.githubusercontent.com/EliWimmer/vscode-theme-fern/master/images/image1.png">
-
-## Contributing
-
-Please, report issues/bugs and suggestions for improvements to the issue [here](https://github.com/eliwimmer/vscode-theme-fern/issues).
-
-Please contribute if you have any suggestions. **PRs are welcomed!** 
-
-## Release Notes
-
-See [changelog](CHANGELOG.md).
-
-## Credits
-
-Thanks to:
-  - [jdinhlife](https://github.com/jdinhlife) for the [vscode-theme-gruvbox](https://github.com/jdinhify/vscode-theme-gruvbox) which was the basis for this theme
-  - [Pavel Pertsev](https://github.com/morhetz), the creator of [Gruvbox](https://github.com/morhetz/Gruvbox) original theme, 
-  - [Catppuccin](https://github.com/catppuccin/vscode) for the file icons
-
-Copyright (C) 2024 [Eli Wimmer](https://github.com/eliwimmer)
+See `docs/context/CONTEXT.md` for the language.

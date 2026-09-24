@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Fern palette</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #191f1d;
+      --card: #202725;
+      --line: #3a413d;
+      --text: #d1f0db;
+      --muted: #91a195;
+      --button: #333835;
+      --button-hover: #3a413d;
+      --copied: #77b68e;
+      --copied-text: #191f1d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font: 15px/1.4 ui-sans-serif, system-ui, sans-serif;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .lede {
+      margin: 8px 0 40px;
+      color: var(--muted);
+    }
+
+    section + section { margin-top: 36px; }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .swatch {
+      height: 88px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px 12px;
+    }
+
+    .name { font-size: 14px; }
+
+    .hex {
+      margin-top: 2px;
+      color: var(--muted);
+      font: 12px/1.3 ui-monospace, "SFMono-Regular", Menlo, monospace;
+    }
+
+    button {
+      flex: none;
+      padding: 6px 10px;
+      border: 0;
+      border-radius: 6px;
+      background: var(--button);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    button:hover { background: var(--button-hover); }
+
+    button:focus-visible {
+      outline: 2px solid var(--copied);
+      outline-offset: 2px;
+    }
+
+    button.copied {
+      background: var(--copied);
+      color: var(--copied-text);
+    }
+
+    .source {
+      margin: 40px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Fern</h1>
+    <p class="lede">Each role in the palette. Copy puts the hex on the clipboard.</p>
+
+    <section>
+      <h2>Background</h2>
+      <div class="grid">
+        <article>
+          <div class="swatch" style="background:#191F1D"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg0-h</div>
+              <div class="hex">#191F1D</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg0-h</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#202725"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg0</div>
+              <div class="hex">#202725</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg0</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#252B28"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg1</div>
+              <div class="hex">#252B28</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#2D3430"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg2</div>
+              <div class="hex">#2D3430</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#333835"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg3</div>
+              <div class="hex">#333835</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg3</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#3A413D"></div>
+          <div class="meta">
+            <div>
+              <div class="name">bg4</div>
+              <div class="hex">#3A413D</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> bg4</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Foreground</h2>
+      <div class="grid">
+        <article>
+          <div class="swatch" style="background:#7C837E"></div>
+          <div class="meta">
+            <div>
+              <div class="name">gray</div>
+              <div class="hex">#7C837E</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> gray</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#DDFDE8"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg0</div>
+              <div class="hex">#DDFDE8</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg0</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#D1F0DB"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg</div>
+              <div class="hex">#D1F0DB</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#B9DAC6"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg1</div>
+              <div class="hex">#B9DAC6</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#AEC2B4"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg2</div>
+              <div class="hex">#AEC2B4</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#A0B1A5"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg3</div>
+              <div class="hex">#A0B1A5</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg3</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#91A195"></div>
+          <div class="meta">
+            <div>
+              <div class="name">fg4</div>
+              <div class="hex">#91A195</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> fg4</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Accent</h2>
+      <div class="grid">
+        <article>
+          <div class="swatch" style="background:#B15D43"></div>
+          <div class="meta">
+            <div>
+              <div class="name">red1</div>
+              <div class="hex">#B15D43</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> red1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#D78460"></div>
+          <div class="meta">
+            <div>
+              <div class="name">red2</div>
+              <div class="hex">#D78460</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> red2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#798C3B"></div>
+          <div class="meta">
+            <div>
+              <div class="name">green1</div>
+              <div class="hex">#798C3B</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> green1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#99AB63"></div>
+          <div class="meta">
+            <div>
+              <div class="name">green2</div>
+              <div class="hex">#99AB63</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> green2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#A2A51D"></div>
+          <div class="meta">
+            <div>
+              <div class="name">yellow1</div>
+              <div class="hex">#A2A51D</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> yellow1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#B4BA5E"></div>
+          <div class="meta">
+            <div>
+              <div class="name">yellow2</div>
+              <div class="hex">#B4BA5E</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> yellow2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#499784"></div>
+          <div class="meta">
+            <div>
+              <div class="name">blue1</div>
+              <div class="hex">#499784</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> blue1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#74B4A3"></div>
+          <div class="meta">
+            <div>
+              <div class="name">blue2</div>
+              <div class="hex">#74B4A3</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> blue2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#A48EA2"></div>
+          <div class="meta">
+            <div>
+              <div class="name">purple2</div>
+              <div class="hex">#A48EA2</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> purple2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#4F9268"></div>
+          <div class="meta">
+            <div>
+              <div class="name">aqua1</div>
+              <div class="hex">#4F9268</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> aqua1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#77B68E"></div>
+          <div class="meta">
+            <div>
+              <div class="name">aqua2</div>
+              <div class="hex">#77B68E</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> aqua2</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#9F733C"></div>
+          <div class="meta">
+            <div>
+              <div class="name">orange1</div>
+              <div class="hex">#9F733C</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> orange1</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#C1975C"></div>
+          <div class="meta">
+            <div>
+              <div class="name">orange2</div>
+              <div class="hex">#C1975C</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> orange2</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Interface</h2>
+      <div class="grid">
+        <article>
+          <div class="swatch" style="background:#363C38"></div>
+          <div class="meta">
+            <div>
+              <div class="name">sel</div>
+              <div class="hex">#363C38</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> sel</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#303B37"></div>
+          <div class="meta">
+            <div>
+              <div class="name">float</div>
+              <div class="hex">#303B37</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> float</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#464F49"></div>
+          <div class="meta">
+            <div>
+              <div class="name">gutter</div>
+              <div class="hex">#464F49</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> gutter</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#504945"></div>
+          <div class="meta">
+            <div>
+              <div class="name">edge</div>
+              <div class="hex">#504945</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> edge</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#8E9E92"></div>
+          <div class="meta">
+            <div>
+              <div class="name">faint</div>
+              <div class="hex">#8E9E92</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> faint</span></button>
+          </div>
+        </article>
+        <article>
+          <div class="swatch" style="background:#9DB3A4"></div>
+          <div class="meta">
+            <div>
+              <div class="name">mist</div>
+              <div class="hex">#9DB3A4</div>
+            </div>
+            <button type="button"><span class="label">Copy</span><span class="sr-only"> mist</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="source">Values from palette/roles.txt.</p>
+  </main>
+  <script>
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      const ok = document.execCommand("copy");
+      area.remove();
+      if (!ok) return Promise.reject(new Error("copy failed"));
+      return Promise.resolve();
+    }
+
+    document.querySelector("main").addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+      if (!button) return;
+      const article = button.closest("article");
+      const hex = article.querySelector(".hex").textContent.trim();
+      const label = button.querySelector(".label");
+      copyText(hex).then(() => {
+        label.textContent = "Copied";
+        button.classList.add("copied");
+        clearTimeout(button._timer);
+        button._timer = setTimeout(() => {
+          label.textContent = "Copy";
+          button.classList.remove("copied");
+        }, 1200);
+      }).catch(() => {
+        label.textContent = "Failed";
+        clearTimeout(button._timer);
+        button._timer = setTimeout(() => {
+          label.textContent = "Copy";
+        }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>

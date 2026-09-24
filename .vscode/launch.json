@@ -9,7 +9,8 @@
             "internalConsoleOptions": "openOnFirstSessionStart",
             "stopOnEntry": false,
             "runtimeExecutable": "${execPath}",
-            "args": ["--extensionDevelopmentPath=${workspaceRoot}" ]
+            "args": ["--extensionDevelopmentPath=${workspaceFolder}/ports/vscode"],
+            "preLaunchTask": "build"
         }
     ]
 }

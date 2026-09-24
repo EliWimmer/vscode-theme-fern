@@ -24,24 +24,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Fern Hard Flat",
+        "label": "Fern",
         "uiTheme": "vs-dark",
-        "path": "./themes/fern-hard-flat.json"
+        "path": "./themes/fern.json"
       },
       {
-        "label": "Fern Hard (WIP)",
+        "label": "Fern Flat",
         "uiTheme": "vs-dark",
-        "path": "./themes/fern-hard.json"
-      },
-      {
-        "label": "Fern Soft Flat",
-        "uiTheme": "vs-dark",
-        "path": "./themes/fern-soft-flat.json"
-      },
-      {
-        "label": "Fern Light Flat",
-        "uiTheme": "vs",
-        "path": "./themes/fern-light-flat.json"
+        "path": "./themes/fern-flat.json"
       }
     ],
     "iconThemes": [
@@ -53,17 +43,14 @@
     ]
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "ovsx": "^0.8.3",
-    "semantic-release": "^22.0.5",
-    "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "vsce": "^2.9.0"
   },
   "private": true,
   "scripts": {
-    "semantic-release": "semantic-release",
+    "build": "node ../../scripts/build.mjs",
+    "vscode:prepublish": "npm run build",
     "build:icons": "npx tsx scripts/build-icons.ts"
   },
   "license": "MIT",
