@@ -62,6 +62,7 @@ _Avoid_: Config copy, theme file
 - The VS Code **Port** has two **Workbenches**: **Fern** and **Fern Flat**
 - A **Port** for an app with a single background, such as a terminal, has no **Fern Flat**
 - The Ghostty **Port** uses the reference workbench's terminal roles. `purple1` is not a role.
+- The Neovim **Port** maps **Roles** to highlight groups and terminal ANSI colors.
 - The Zed **Port** assigns **Roles** from **Fern**. It has no **Fern Flat**.
 - An **Install** is produced from a **Port**. Color values are not authored there.
 

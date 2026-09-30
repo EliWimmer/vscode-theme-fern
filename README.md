@@ -6,8 +6,9 @@ Fern is a color palette and the ports of that palette.
 
 - `ports/vscode` is the VS Code extension. `workbenches/` holds Fern and Fern Flat. The icon theme stays in this port.
 - `ports/ghostty/fern` is the Ghostty role map.
+- `ports/neovim/fern.json` maps roles to Neovim highlight groups and terminal colors.
 - `ports/zed/fern.json` is the Zed role map.
 
-The build writes the VS Code theme files locally and installs the Ghostty and Zed themes into the chezmoi source. Generated theme files are not committed in this repo.
+The build writes the VS Code theme files locally and installs the Ghostty, Neovim, and Zed themes into the chezmoi source. Generated theme files are not committed in this repo.
 
 See `docs/context/CONTEXT.md` for the language.

@@ -148,6 +148,76 @@ function assertZed(theme) {
   walk(theme, "zed")
 }
 
+function assertNeovim(theme) {
+  if (!theme.highlights?.Normal?.fg || !theme.highlights?.Normal?.bg) {
+    throw new Error("Neovim theme must define Normal foreground and background")
+  }
+  if (!Array.isArray(theme.terminal) || theme.terminal.length !== 16) {
+    throw new Error("Neovim theme must define 16 terminal colors")
+  }
+  for (const [group, attrs] of Object.entries(theme.highlights)) {
+    for (const key of ["fg", "bg", "sp"]) {
+      if (attrs[key] !== undefined) assertHex(attrs[key], `Neovim ${group}.${key}`)
+    }
+  }
+  theme.terminal.forEach((color, index) => assertHex(color, `Neovim terminal[${index}]`))
+}
+
+function luaValue(value, indent = 0) {
+  if (typeof value === "string") return JSON.stringify(value)
+  if (typeof value === "boolean") return String(value)
+  if (Array.isArray(value)) return `{ ${value.map((item) => luaValue(item, indent)).join(", ")} }`
+  if (value && typeof value === "object") {
+    const pad = " ".repeat(indent + 2)
+    const entries = Object.entries(value).map(
+      ([key, item]) => {
+        const luaKey = /^[A-Za-z_][A-Za-z0-9_]*$/.test(key) ? key : `[${JSON.stringify(key)}]`
+        return `${pad}${luaKey} = ${luaValue(item, indent + 2)},`
+      },
+    )
+    return `{\n${entries.join("\n")}\n${" ".repeat(indent)}}`
+  }
+  throw new Error(`Unsupported Neovim theme value: ${value}`)
+}
+
+function renderNeovim(theme) {
+  return [
+    'vim.cmd.highlight("clear")',
+    'if vim.fn.exists("syntax_on") == 1 then',
+    '  vim.cmd.syntax("reset")',
+    "end",
+    "",
+    "vim.o.termguicolors = true",
+    'vim.g.colors_name = "fern"',
+    "",
+    `local highlights = ${luaValue(theme.highlights)}`,
+    "for group, attrs in pairs(highlights) do",
+    "  vim.api.nvim_set_hl(0, group, attrs)",
+    "end",
+    "",
+    `for i, color in ipairs(${luaValue(theme.terminal)}) do`,
+    '  vim.g["terminal_color_" .. (i - 1)] = color',
+    "end",
+    "",
+  ].join("\n")
+}
+
+function selectNeovim(colorscheme, lazyConfig) {
+  const nextColorscheme = colorscheme.replace(/(colorscheme\s*=\s*)"[^"]+"/, '$1"fern"')
+  if (!/colorscheme\s*=\s*"fern"/.test(nextColorscheme)) {
+    throw new Error("LazyVim colorscheme config has no colorscheme setting")
+  }
+
+  const nextLazyConfig = lazyConfig.replace(
+    /(install\s*=\s*\{\s*colorscheme\s*=\s*\{\s*)"[^"]+"/,
+    '$1"fern"',
+  )
+  if (!/colorscheme\s*=\s*\{\s*"fern"/.test(nextLazyConfig)) {
+    throw new Error("LazyVim install config has no colorscheme fallback")
+  }
+  return { colorscheme: nextColorscheme, lazyConfig: nextLazyConfig }
+}
+
 function selectFern(settings) {
   const next = settings.replace(/("theme"\s*:\s*\{[^}]*?"dark"\s*:\s*")[^"]*(")/, "$1Fern$2")
   if (!/"dark"\s*:\s*"Fern"/.test(next)) throw new Error("Zed settings have no theme.dark to set")
@@ -187,6 +257,27 @@ function build() {
   const config = fs.readFileSync(configPath, "utf8").replace(/^theme = .*$/m, "theme = fern")
   fs.writeFileSync(configPath, config)
   console.log(`Installed Ghostty theme into ${ghosttyDir}`)
+
+  const nvimDir = path.join(source, "dot_config/nvim")
+  const colorschemePath = path.join(nvimDir, "lua/plugins/colorscheme.lua")
+  const lazyConfigPath = path.join(nvimDir, "lua/config/lazy.lua")
+  if (fs.existsSync(colorschemePath) && fs.existsSync(lazyConfigPath)) {
+    const nvimSource = fs.readFileSync(path.join(root, "ports/neovim/fern.json"), "utf8")
+    const neovim = resolveTree(JSON.parse(nvimSource), roles)
+    assertNeovim(neovim)
+    fs.mkdirSync(path.join(nvimDir, "colors"), { recursive: true })
+    fs.writeFileSync(path.join(nvimDir, "colors/fern.lua"), renderNeovim(neovim))
+
+    const selected = selectNeovim(
+      fs.readFileSync(colorschemePath, "utf8"),
+      fs.readFileSync(lazyConfigPath, "utf8"),
+    )
+    fs.writeFileSync(colorschemePath, selected.colorscheme)
+    fs.writeFileSync(lazyConfigPath, selected.lazyConfig)
+    console.log(`Installed Neovim colorscheme into ${nvimDir}`)
+  } else {
+    console.log("chezmoi Neovim config not found, skipped Neovim install")
+  }
 
   const zedDir = path.join(source, "dot_config/zed")
   const settingsPath = path.join(zedDir, "settings.json")
